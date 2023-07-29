@@ -1,0 +1,64 @@
+{
+    "responseLevel": "FULL",
+    "save": "true",
+    "process": "true",
+    "projectName": "<YOUR PROJECT NAME>",
+    "attributes": [
+        {
+            "name": "NATURAL_ID",
+            "type": "TEXT",
+            "map": "ID1",
+            "display": "NATURAL_ID",
+            "defaultValue": null,
+            "isReportable": true
+        },
+        {
+            "name": "DATE",
+            "type": "DATE",
+            "map": "DOC_DATE",
+            "display": "DATE",
+            "defaultValue": null,
+            "isReportable": true
+        },
+        {
+            "name": "NAME",
+            "type": "TEXT",
+            "map": "STRUCT",
+            "display": "NAME",
+            "defaultValue": null,
+            "isReportable": true
+        },
+        {
+            "name": "RATING",
+            "type": "NUMBER",
+            "map": "STRUCT",
+            "display": "RATING",
+            "defaultValue": null,
+            "isReportable": true
+        },
+        {
+            "name": "REVIEW",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "display": "REVIEW",
+            "defaultValue": null,
+            "isReportable": true
+        }
+    ],
+    "records": [
+        {
+            "NATURAL_ID": "1",
+            "DATE": "2022-10-12",
+            "NAME": "Yuri",
+            "RATING": "4",
+            "REVIEW": "Everything was bad"
+        },
+        {
+            "NATURAL_ID": "2",
+            "DATE": "2022-10-14",
+            "NAME": "Not yuri",
+            "RATING": "5",
+            "REVIEW": "Awesome amenities it deserves 5 stars"
+        }
+    ]
+}
