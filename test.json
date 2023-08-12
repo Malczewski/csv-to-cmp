@@ -43,6 +43,14 @@
             "display": "REVIEW",
             "defaultValue": null,
             "isReportable": true
+        },
+        {
+            "name": "MULTI_VALUE",
+            "type": "TEXT",
+            "map": "STRUCT",
+            "display": "MULTI_VALUE",
+            "defaultValue": null,
+            "isReportable": true
         }
     ],
     "records": [
@@ -51,14 +59,16 @@
             "DATE": "2022-10-12",
             "NAME": "Yuri",
             "RATING": "4",
-            "REVIEW": "Everything was bad"
+            "REVIEW": "Everything was bad",
+            "MULTI_VALUE": "\"first\""
         },
         {
             "NATURAL_ID": "2",
             "DATE": "2022-10-14",
             "NAME": "Not yuri",
             "RATING": "5",
-            "REVIEW": "Awesome amenities it deserves 5 stars"
+            "REVIEW": "Awesome amenities it deserves 5 stars",
+            "MULTI_VALUE": "\"first\",\"second and third\",\"fourth\""
         }
     ]
 }

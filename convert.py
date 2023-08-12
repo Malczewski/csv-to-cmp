@@ -9,13 +9,21 @@ def csv_to_json(input_csv_file, output_json_file):
 		"responseLevel": "FULL",
 		"save": "true",
 		"process": "true",
-		"projectName": "<YOUR PROJECT NAME>",
+		"projectName": "{{PROJECT_NAME}}",
 	}
 	api_payload["attributes"] = get_attributes(input_csv_file)
 	api_payload["records"] = read_data(input_csv_file)
 
 	with open(output_json_file, 'w') as jsonfile:
 		json.dump(api_payload, jsonfile, indent=4)
+
+def convert_multivalue(text):
+	if text == '':
+		return ''
+	substrings = text.split(',')
+	quoted_substrings = [f'"{substring.strip()}"' for substring in substrings]
+	result = ','.join(quoted_substrings)
+	return result
 
 def read_data(input_file):
 	json_array = []
@@ -25,6 +33,11 @@ def read_data(input_file):
 		for row in reader:
 			json_array.append(row)
 
+	headers = extract_headers(input_file)
+	for h in headers:
+		if h["type"] == 'MULTIVALUE':
+			for row in json_array:
+				row[h["name"]] = convert_multivalue(row[h["name"]])
 	return json_array
 
 def get_data_type(column_values, header_name):
@@ -39,16 +52,35 @@ def get_data_type(column_values, header_name):
 
 	# Helper function to calculate average word count in values
 	def average_word_count(values):
-		word_counts = [len(value.split()) for value in values]
+		non_empty_values = [value for value in values if value.strip()]
+		
+		if not non_empty_values:
+			return 0
+		
+		word_counts = [len(value.split()) for value in non_empty_values]
 		return sum(word_counts) / len(word_counts)
 	
+	def distinct_word_count(values):
+		if not values:
+			return False
+		
+		word_count_set = set(len(value.split()) for value in values)
+		return len(word_count_set)
+	
+	def are_multi_value(values):
+		multi_value_pattern = re.compile(r'^[^,.!?]+(,[^,.!?]+)*$')
+		multi_value_mandatory = re.compile(r'^[^,.!?]+(,[^,.!?]+)+$')
+		return all(multi_value_pattern.match(value) or value == '' for value in values) and any(multi_value_mandatory.match(value) for value in values)
+			
 	if ("NATURAL_ID" in header_name.upper()):
 		return "ID"
 	if are_all_numbers(column_values):
 		return "NUMBER"
 	elif are_all_dates(column_values):
 		return "DATE"
-	elif average_word_count(column_values) > 2:
+	elif are_multi_value(column_values):
+		return "MULTIVALUE"
+	elif average_word_count(column_values) > 2 and distinct_word_count(column_values) > max(len(column_values) / 50, 10):
 		return "VERBATIM"
 	else:
 		return "TEXT"
@@ -79,6 +111,7 @@ def get_attributes(input_file):
 			'NUMBER': 'NUMBER',
 			'DATE': 'DATE',
 			'VERBATIM': 'TEXT',
+			'MULTIVALUE': 'TEXT'
 			# Add more cases as needed
 		}.get(type, 'TEXT')
 	def get_map(type):
@@ -88,6 +121,7 @@ def get_attributes(input_file):
 			'NUMBER': 'STRUCT',
 			'DATE': 'DOC_DATE',
 			'VERBATIM': 'VERBATIM',
+			'MULTIVALUE': 'STRUCT'
 			# Add more cases as needed
 		}.get(type, 'STRUCT')
 
@@ -98,7 +132,9 @@ def get_attributes(input_file):
 			"map": get_map(header["type"]),
 			"display": header["name"],
 			"defaultValue": None,
-			"isReportable": True
+			"isReportable": True,
+			"isMultiValue": header["type"] == 'MULTIVALUE',
+			"isCaseSensitive": False
 		}
 	return list(map(transform_header, headers))
 	
