@@ -2,6 +2,7 @@ import argparse
 import csv
 import json
 import re
+import os
 
 def csv_to_json(input_csv_file, output_json_file):
 	
@@ -14,7 +15,7 @@ def csv_to_json(input_csv_file, output_json_file):
 	api_payload["attributes"] = get_attributes(input_csv_file)
 	api_payload["records"] = read_data(input_csv_file)
 
-	with open(output_json_file, 'w') as jsonfile:
+	with open(output_json_file, 'w', encoding='utf-8') as jsonfile:
 		json.dump(api_payload, jsonfile, indent=4)
 
 def convert_multivalue(text):
@@ -28,7 +29,7 @@ def convert_multivalue(text):
 def read_data(input_file):
 	json_array = []
 
-	with open(input_file, newline='') as csvfile:
+	with open(input_file, newline='', encoding='utf-8') as csvfile:
 		reader = csv.DictReader(csvfile)
 		for row in reader:
 			json_array.append(row)
@@ -72,7 +73,7 @@ def get_data_type(column_values, header_name):
 		multi_value_mandatory = re.compile(r'^[^,.!?]+(,[^,.!?]+)+$')
 		return all(multi_value_pattern.match(value) or value == '' for value in values) and any(multi_value_mandatory.match(value) for value in values)
 			
-	if ("NATURAL_ID" in header_name.upper()):
+	if "NATURAL_ID" in header_name.upper() or "ID" == header_name.upper():
 		return "ID"
 	if are_all_numbers(column_values):
 		return "NUMBER"
@@ -82,11 +83,13 @@ def get_data_type(column_values, header_name):
 		return "MULTIVALUE"
 	elif average_word_count(column_values) > 2 and distinct_word_count(column_values) > max(len(column_values) / 50, 10):
 		return "VERBATIM"
+	elif "SOURCE" in header_name.upper():
+		return "SOURCE"
 	else:
 		return "TEXT"
 
 def extract_headers(input_file):
-	with open(input_file, newline='') as csvfile:
+	with open(input_file, newline='', encoding='utf-8') as csvfile:
 		reader = csv.reader(csvfile)
 		headers = next(reader)  # Extract headers from the first row
 		column_values = {header: [] for header in headers}
@@ -111,7 +114,8 @@ def get_attributes(input_file):
 			'NUMBER': 'NUMBER',
 			'DATE': 'DATE',
 			'VERBATIM': 'TEXT',
-			'MULTIVALUE': 'TEXT'
+			'MULTIVALUE': 'TEXT',
+			'SOURCE': 'TEXT'
 			# Add more cases as needed
 		}.get(type, 'TEXT')
 	def get_map(type):
@@ -121,7 +125,8 @@ def get_attributes(input_file):
 			'NUMBER': 'STRUCT',
 			'DATE': 'DOC_DATE',
 			'VERBATIM': 'VERBATIM',
-			'MULTIVALUE': 'STRUCT'
+			'MULTIVALUE': 'STRUCT',
+			'SOURCE': 'SOURCE'
 			# Add more cases as needed
 		}.get(type, 'STRUCT')
 
@@ -141,12 +146,14 @@ def get_attributes(input_file):
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description='Convert CSV to JSON.')
 	parser.add_argument('input', type=str, help='Path to the input CSV file')
-	parser.add_argument('output', type=str, help='Path to the output JSON file')
+	parser.add_argument('output', type=str, help='Path to the output JSON file', nargs='?')
 
 	args = parser.parse_args()
 
 	input_csv_file = args.input
 	output_json_file = args.output
+	if output_json_file == None:
+		output_json_file = os.path.splitext(input_csv_file)[0] + '.json'
 
 	csv_to_json(input_csv_file, output_json_file)
 

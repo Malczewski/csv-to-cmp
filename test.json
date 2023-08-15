@@ -2,7 +2,7 @@
     "responseLevel": "FULL",
     "save": "true",
     "process": "true",
-    "projectName": "<YOUR PROJECT NAME>",
+    "projectName": "{{PROJECT_NAME}}",
     "attributes": [
         {
             "name": "NATURAL_ID",
@@ -10,7 +10,9 @@
             "map": "ID1",
             "display": "NATURAL_ID",
             "defaultValue": null,
-            "isReportable": true
+            "isReportable": true,
+            "isMultiValue": false,
+            "isCaseSensitive": false
         },
         {
             "name": "DATE",
@@ -18,7 +20,9 @@
             "map": "DOC_DATE",
             "display": "DATE",
             "defaultValue": null,
-            "isReportable": true
+            "isReportable": true,
+            "isMultiValue": false,
+            "isCaseSensitive": false
         },
         {
             "name": "NAME",
@@ -26,7 +30,9 @@
             "map": "STRUCT",
             "display": "NAME",
             "defaultValue": null,
-            "isReportable": true
+            "isReportable": true,
+            "isMultiValue": false,
+            "isCaseSensitive": false
         },
         {
             "name": "RATING",
@@ -34,15 +40,19 @@
             "map": "STRUCT",
             "display": "RATING",
             "defaultValue": null,
-            "isReportable": true
+            "isReportable": true,
+            "isMultiValue": false,
+            "isCaseSensitive": false
         },
         {
             "name": "REVIEW",
             "type": "TEXT",
-            "map": "VERBATIM",
+            "map": "STRUCT",
             "display": "REVIEW",
             "defaultValue": null,
-            "isReportable": true
+            "isReportable": true,
+            "isMultiValue": false,
+            "isCaseSensitive": false
         },
         {
             "name": "MULTI_VALUE",
@@ -50,7 +60,9 @@
             "map": "STRUCT",
             "display": "MULTI_VALUE",
             "defaultValue": null,
-            "isReportable": true
+            "isReportable": true,
+            "isMultiValue": true,
+            "isCaseSensitive": false
         }
     ],
     "records": [
