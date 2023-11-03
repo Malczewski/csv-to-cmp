@@ -3,8 +3,10 @@ import csv
 import json
 import re
 import os
+from datetime import datetime, timedelta
+import random
 
-def csv_to_json(input_csv_file, output_json_file):
+def csv_to_json(input_csv_file, output_json_file, date_range):
 	
 	api_payload = {
 		"responseLevel": "FULL",
@@ -12,8 +14,22 @@ def csv_to_json(input_csv_file, output_json_file):
 		"process": "true",
 		"projectName": "{{PROJECT_NAME}}",
 	}
-	api_payload["attributes"] = get_attributes(input_csv_file)
+	api_payload["attributes"] = get_attributes(input_csv_file, date_range != None)
 	api_payload["records"] = read_data(input_csv_file)
+	if date_range != None:
+		start_date, end_date = validate_and_parse_date_range(date_range)
+		api_payload["attributes"].append({
+			"name": "Date",
+			"type": "DATE",
+			"map": "DOC_DATE",
+			"display": "Date",
+			"defaultValue": None,
+			"isReportable": True,
+			"isMultiValue": False,
+			"isCaseSensitive": False
+		})
+		for record in api_payload["records"]:
+			record["Date"] = generate_random_date(start_date, end_date)
 
 	with open(output_json_file, 'w', encoding='utf-8') as jsonfile:
 		json.dump(api_payload, jsonfile, indent=4)
@@ -44,7 +60,7 @@ def read_data(input_file):
 def get_data_type(column_values, header_name):
 	# Helper function to check if all values are numbers
 	def are_all_numbers(values):
-		return all(value.replace('.', '', 1).isdigit() for value in values)
+		return all(value.replace('.', '', 1).isdigit() or value.strip() == '' or value == None for value in values)
 
 	# Helper function to check if all values are dates in ISO format or header contains "DATE"
 	def are_all_dates(values):
@@ -68,11 +84,20 @@ def get_data_type(column_values, header_name):
 		word_count_set = set(len(value.split()) for value in values)
 		return len(word_count_set)
 	
+	def distinct_char_count(values):
+		if not values:
+			return False
+		
+		char_count_set = set(len(value) for value in values)
+		return len(char_count_set)
+	
+	
 	def are_multi_value(values):
 		multi_value_pattern = re.compile(r'^[^,.!?]+(,[^,.!?]+)*$')
 		multi_value_mandatory = re.compile(r'^[^,.!?]+(,[^,.!?]+)+$')
 		return all(multi_value_pattern.match(value) or value == '' for value in values) and any(multi_value_mandatory.match(value) for value in values)
-			
+	
+	distinct_count_threshold = max(len(column_values) / 50, 10) if len(column_values) > 10 else 4
 	if "NATURAL_ID" in header_name.upper() or "ID" == header_name.upper():
 		return "ID"
 	if are_all_numbers(column_values):
@@ -81,7 +106,9 @@ def get_data_type(column_values, header_name):
 		return "DATE"
 	elif are_multi_value(column_values):
 		return "MULTIVALUE"
-	elif average_word_count(column_values) > 2 and distinct_word_count(column_values) > max(len(column_values) / 50, 10):
+	elif average_word_count(column_values) > 2 \
+		and (distinct_word_count(column_values) > distinct_count_threshold \
+			or distinct_char_count(column_values) > distinct_count_threshold):
 		return "VERBATIM"
 	elif "SOURCE" in header_name.upper():
 		return "SOURCE"
@@ -105,7 +132,7 @@ def extract_headers(input_file):
 
 	return headers_info
 
-def get_attributes(input_file):
+def get_attributes(input_file, random_date):
 	headers = extract_headers(input_file)
 	def get_type(type):
 		return {
@@ -123,7 +150,7 @@ def get_attributes(input_file):
 			'ID': 'ID1',
 			'TEXT': 'STRUCT',
 			'NUMBER': 'STRUCT',
-			'DATE': 'DOC_DATE',
+			'DATE': 'DOC_DATE' if not random_date else 'STRUCT',
 			'VERBATIM': 'VERBATIM',
 			'MULTIVALUE': 'STRUCT',
 			'SOURCE': 'SOURCE'
@@ -142,19 +169,40 @@ def get_attributes(input_file):
 			"isCaseSensitive": False
 		}
 	return list(map(transform_header, headers))
+
+def validate_and_parse_date_range(date_range):
+	try:
+		start_date_str, end_date_str = date_range.split(' to ')
+		start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
+		end_date = datetime.strptime(end_date_str, '%Y-%m-%d')
+		return start_date, end_date
+	except ValueError:
+		raise argparse.ArgumentTypeError("Invalid date range format. Use 'YYYY-MM-DD to YYYY-MM-DD'.")
+
+def generate_random_date(start_date, end_date):
+	delta = end_date - start_date
+	random_days = random.randint(0, delta.days)
+	random_date = start_date + timedelta(days=random_days)
+	return random_date.strftime('%Y-%m-%d')
 	
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description='Convert CSV to JSON.')
 	parser.add_argument('input', type=str, help='Path to the input CSV file')
 	parser.add_argument('output', type=str, help='Path to the output JSON file', nargs='?')
+	parser.add_argument('--date-range', type=str, help='Date range for random date population, format: "2023-01-01 to 2023-12-31"')
 
 	args = parser.parse_args()
 
 	input_csv_file = args.input
 	output_json_file = args.output
+	date_range = args.date_range
+
+	if input_csv_file[-3:] != 'csv':
+		print("Error. Can only convert csv files")
+		exit(1)
 	if output_json_file == None:
 		output_json_file = os.path.splitext(input_csv_file)[0] + '.json'
 
-	csv_to_json(input_csv_file, output_json_file)
+	csv_to_json(input_csv_file, output_json_file, date_range)
 
 	print(f"Conversion successful. JSON data saved to {output_json_file}.")
