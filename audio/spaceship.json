@@ -1,0 +1,60 @@
+{
+    "responseLevel": "FULL",
+    "save": true,
+    "process": true,
+    "projectName": "<YOUR_PROJECT>",
+    "attributes": [
+        {
+            "name": "verbatim_type_for_agent",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_AGENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_bot",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_UNKNOWN",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_client",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_CLIENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "cool_rich_verbatim",
+            "type": "TEXT",
+            "map": "RICH_VERBATIM",
+            "parameters": {
+                "type": "CALL",
+                "verbatimTypes": [
+                    "verbatim_type_for_agent",
+                    "verbatim_type_for_client",
+                    "verbatim_type_for_bot"
+                ],
+                "language": "en"
+            }
+        },
+        {
+            "name": "NATURAL_ID",
+            "type": "TEXT",
+            "map": "ID1"
+        }
+    ],
+    "records": [
+        {
+            "NATURAL_ID": "Audio;spaceship",
+            "cool_rich_verbatim": "{\"ID\": \"spaceship\", \"duration\": 88362, \"segment_type\": \"SENTENCE\", \"participants\": [{\"participant_id\": \"0\", \"gender\": \"MALE\", \"type\": \"CLIENT\", \"is_bot\": false}, {\"participant_id\": \"1\", \"gender\": \"FEMALE\", \"type\": \"CLIENT\", \"is_bot\": false}, {\"participant_id\": \"2\", \"gender\": \"MALE\", \"type\": \"CLIENT\", \"is_bot\": false}, {\"participant_id\": \"3\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": false}, {\"participant_id\": \"4\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": true}], \"segments\": [{\"participant_id\": \"0\", \"start\": 0, \"end\": 2740, \"text\": \"Hello, I need to check the status of my spaceship repair.\"}, {\"participant_id\": \"4\", \"start\": 3040, \"end\": 8000, \"text\": \"Welcome to Galactic Starship Repair Services. May I have your ship's identification number?\"}, {\"participant_id\": \"0\", \"start\": 8300, \"end\": 10668, \"text\": \"My ship's ID is X-Wing-345.\"}, {\"participant_id\": \"4\", \"start\": 10968, \"end\": 14072, \"text\": \"Thank you, Luke. Let me check the status of your repair.\"}, {\"participant_id\": \"4\", \"start\": 19672, \"end\": 26072, \"text\": \"It appears your spaceship is undergoing repairs in Docking Bay 94. Estimated completion time is within the next day.\"}, {\"participant_id\": \"1\", \"start\": 27372, \"end\": 28835, \"text\": \"Luke, how are the repairs going?\"}, {\"participant_id\": \"0\", \"start\": 31135, \"end\": 35082, \"text\": \"Leia! The repairs should be completed soon. We'll be back in action in no time.\"}, {\"participant_id\": \"1\", \"start\": 35082, \"end\": 38286, \"text\": \"Good to hear. The Rebel Alliance needs every ship ready for the upcoming battle.\"}, {\"participant_id\": \"2\", \"start\": 38586, \"end\": 40235, \"text\": \"Hey, has anyone seen my blaster?\"}, {\"participant_id\": \"4\", \"start\": 45835, \"end\": 52011, \"text\": \"Excuse me, Han. We're currently assisting other customers. Please hold while I check the status of your blaster.\"}, {\"participant_id\": \"3\", \"start\": 51811, \"end\": 53367, \"text\": \"I sense a disturbance in the Force.\"}, {\"participant_id\": \"1\", \"start\": 53367, \"end\": 54969, \"text\": \"Darth Vader! What are you doing here?\"}, {\"participant_id\": \"3\", \"start\": 55269, \"end\": 58102, \"text\": \"I'm here to ensure the repairs on my ship are prioritized.\"}, {\"participant_id\": \"4\", \"start\": 57702, \"end\": 62118, \"text\": \"Apologies for the interruption. Han, it seems your blaster is in your quarters.\"}, {\"participant_id\": \"2\", \"start\": 62118, \"end\": 64695, \"text\": \"Thanks, Droid-1. I must have misplaced it.\"}, {\"participant_id\": \"0\", \"start\": 67295, \"end\": 71498, \"text\": \"We need to make sure the repairs are completed quickly. The fate of the Rebellion depends on it.\"}, {\"participant_id\": \"1\", \"start\": 71498, \"end\": 73658, \"text\": \"Agreed, Luke. We can't afford any delays.\"}, {\"participant_id\": \"3\", \"start\": 75258, \"end\": 78648, \"text\": \"These repairs are taking too long. I will not tolerate incompetence.\"}, {\"participant_id\": \"2\", \"start\": 78648, \"end\": 80993, \"text\": \"Relax, Vader. We'll be ready when the time comes.\"}, {\"participant_id\": \"4\", \"start\": 81293, \"end\": 85485, \"text\": \"Your patience is appreciated, Darth Vader. The repairs will be expedited.\"}, {\"participant_id\": \"0\", \"start\": 85785, \"end\": 88362, \"text\": \"May the Force be with us all as we prepare for the battle ahead.\"}]}"
+        }
+    ]
+}

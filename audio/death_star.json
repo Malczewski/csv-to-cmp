@@ -1,0 +1,60 @@
+{
+    "responseLevel": "FULL",
+    "save": true,
+    "process": true,
+    "projectName": "<YOUR_PROJECT>",
+    "attributes": [
+        {
+            "name": "verbatim_type_for_agent",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_AGENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_bot",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_UNKNOWN",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_client",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_CLIENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "cool_rich_verbatim",
+            "type": "TEXT",
+            "map": "RICH_VERBATIM",
+            "parameters": {
+                "type": "CALL",
+                "verbatimTypes": [
+                    "verbatim_type_for_agent",
+                    "verbatim_type_for_client",
+                    "verbatim_type_for_bot"
+                ],
+                "language": "en"
+            }
+        },
+        {
+            "name": "NATURAL_ID",
+            "type": "TEXT",
+            "map": "ID1"
+        }
+    ],
+    "records": [
+        {
+            "NATURAL_ID": "Audio;death_star",
+            "cool_rich_verbatim": "{\"ID\": \"death_star\", \"duration\": 111522, \"segment_type\": \"SENTENCE\", \"participants\": [{\"participant_id\": \"0\", \"gender\": \"MALE\", \"type\": \"CLIENT\", \"is_bot\": false}, {\"participant_id\": \"1\", \"gender\": \"FEMALE\", \"type\": \"AGENT\", \"is_bot\": false}, {\"participant_id\": \"2\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": true}], \"segments\": [{\"participant_id\": \"0\", \"start\": 0, \"end\": 3181, \"text\": \"This is Darth Vader. I require immediate assistance with the Death Star.\"}, {\"participant_id\": \"1\", \"start\": 5781, \"end\": 8428, \"text\": \"This is Zara from Galactic ow may I assist you, Lord Vader?\"}, {\"participant_id\": \"0\", \"start\": 8428, \"end\": 14326, \"text\": \"The Death Star's primary weapon malfunctioned during a crucial operation. I suspect it's due to a design flaw in the exhaust vent system.\"}, {\"participant_id\": \"1\", \"start\": 14626, \"end\": 20477, \"text\": \"I see, that sounds like a serious issue. Let's try to troubleshoot it. Have you attempted to recalibrate the targeting system?\"}, {\"participant_id\": \"0\", \"start\": 20777, \"end\": 25816, \"text\": \"Yes, I've recalibrated it multiple times, but the problem persists. We need a more permanent solution.\"}, {\"participant_id\": \"2\", \"start\": 26116, \"end\": 33252, \"text\": \"Greetings, Lord Vader. This is K-3PO, your loyal droid Perhaps the vent shaft needs to be cleared of any debris or obstructions?\"}, {\"participant_id\": \"0\", \"start\": 33552, \"end\": 35851, \"text\": \"That's a possibility. How do we proceed with that?\"}, {\"participant_id\": \"1\", \"start\": 37451, \"end\": 40911, \"text\": \"Understood, Lord Vader. I'll relay the order to the maintenance crew right away.\"}, {\"participant_id\": \"0\", \"start\": 40911, \"end\": 43163, \"text\": \"Excellent. We cannot afford any further delays.\"}, {\"participant_id\": \"2\", \"start\": 45763, \"end\": 51779, \"text\": \"While we wait for the maintenance droids to arrive, have you considered reinforcing the vent shaft with additional durasteel plating?\"}, {\"participant_id\": \"0\", \"start\": 51779, \"end\": 55564, \"text\": \"A temporary solution, but it might buy us some time. Proceed with the reinforcement.\"}, {\"participant_id\": \"1\", \"start\": 55864, \"end\": 59649, \"text\": \"I'm coordinating with the engineering team to implement the durasteel plating as we speak.\"}, {\"participant_id\": \"0\", \"start\": 59949, \"end\": 62341, \"text\": \"Good. Let's hope this prevents any future mishaps.\"}, {\"participant_id\": \"2\", \"start\": 61941, \"end\": 67541, \"text\": \"The reinforcement process is underway, Lord Vader. We should see improvements in the system's stability soon.\"}, {\"participant_id\": \"2\", \"start\": 68841, \"end\": 73129, \"text\": \"Understood, my lord. I shall oversee the installation process personally.\"}, {\"participant_id\": \"0\", \"start\": 73129, \"end\": 77053, \"text\": \"See to it that everything is executed flawlessly. I will not tolerate any more failures.\"}, {\"participant_id\": \"1\", \"start\": 77353, \"end\": 82601, \"text\": \"The maintenance droids have cleared the vent shaft, and the durasteel plating has been successfully installed, Lord Vader.\"}, {\"participant_id\": \"0\", \"start\": 82901, \"end\": 86663, \"text\": \"Excellent. Let us hope these measures prove sufficient to prevent any future incidents.\"}, {\"participant_id\": \"2\", \"start\": 86963, \"end\": 93747, \"text\": \"The additional thermal exhaust ports have also been installed, Lord Vader. The Death Star's defenses are now significantly strengthened.\"}, {\"participant_id\": \"0\", \"start\": 96347, \"end\": 100480, \"text\": \"Very good. Your efficiency is commendable, K-3PO. That will be all for now.\"}, {\"participant_id\": \"1\", \"start\": 100480, \"end\": 102663, \"text\": \"Is there anything else you require, Lord Vader?\"}, {\"participant_id\": \"0\", \"start\": 102963, \"end\": 105912, \"text\": \"No, you may return to your duties. May the Force be with you.\"}, {\"participant_id\": \"2\", \"start\": 105512, \"end\": 110152, \"text\": \"Farewell, Lord Vader. Should you require further assistance, you know where to find us.\"}, {\"participant_id\": \"0\", \"start\": 110152, \"end\": 111522, \"text\": \"Indeed. End transmission.\"}]}"
+        }
+    ]
+}

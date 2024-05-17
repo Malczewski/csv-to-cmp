@@ -1,0 +1,34 @@
+name,text,delay
+Frodo,"Hello, I'm inquiring about the status of my ring delivery.", 
+AI-9000,"Welcome to Middle-earth Ring Delivery Services. May I have your order ID, please?",
+Frodo,"My order ID is OneRingToRuleThemAll.",
+AI-9000,"Thank you, Frodo. Let me check the status of your order.",
+AI-9000,"It seems your ring is currently on its way to Mount Doom. ETA is within the next week.",
+Gandalf,"Frodo, my dear boy! How fares the journey?",
+Frodo,"Gandalf! It's been quite the adventure. We're just waiting for the ring to arrive at Mount Doom.",
+Gandalf,"Excellent! Remember, keep it secret, keep it safe.",
+Frodo,"Don't worry, Gandalf. The ring is safe with me.",-1
+Aragorn,"Excuse me, I need to inquire about my sword order.",
+AI-9000,"Of course, may I have your order ID?",
+Aragorn,"My order ID is RangerSword.",
+AI-9000,"Thank you. Let me check the status of your order.",
+AI-9000,"It appears your sword is currently in transit and should arrive shortly.",
+Legolas,"Aragorn, my friend! Have you lost your sword again?",
+Aragorn,"Legolas! No, it's just delayed.",-0.5
+AI-9000,"I've located your order, Aragorn. Your sword should be with you soon.",-1.5
+Frodo,"So, Gandalf, how's your day been?",
+Gandalf,"Oh, you know, just dealing with dragons and dark lords. The usual.",
+Frodo,"Nothing too exciting then.",-1
+Gandalf,"Just the fate of Middle-earth hanging in the balance.",
+Frodo,"Right. Well, I hope you get some rest soon.",-1.5
+Legolas,"Have you seen any orc activity lately?",
+Gandalf,"Indeed, there have been sightings near the borders of Mordor.",
+Legolas,"We must remain vigilant.",-1
+Aragorn,"My sword has finally arrived! Thank you for your assistance!",
+AI-9000,"You're welcome, Aragorn. If you need any further assistance, don't hesitate to contact us.",
+Frodo,"I can't wait for the ring to arrive. The fate of Middle-earth depends on it!",
+Gandalf,"Patience, Frodo. The ring will arrive soon enough.",
+Legolas,"I'll keep watch for any signs of trouble.",
+Frodo,"Thank you, Legolas. Your keen eyes are invaluable.",
+Gandalf,"I must depart now. There are matters I must attend to. Farewell, my friends.",
+Frodo,"Farewell, Gandalf. May the stars shine upon your path.",

@@ -1,0 +1,18 @@
+name,text,delay
+Client,"Hello? Is this the Magical Support Hotline?",
+Support Operator,"Yes, you've reached the right place! How can I assist you today?",
+Client,"Well, my magic wand isn't working properly. I tried casting a spell to turn my annoying neighbor into a frog, but nothing happened!",
+Support Operator,"Oh dear, let's see what we can do to fix that. Have you tried waving your wand in a figure-eight pattern while chanting 'Abracadabra'?",
+Client,"Yes, I've tried that, but still no luck!",
+Support Specialist,"Greetings! This is the Magical Support Specialist. Have you attempted to charge your wand under a full moon? Sometimes they just need a little celestial boost.",
+Client,"Hmm, no, I haven't tried that. Let me go outside and give it a shot.",
+Client,"Okay, I'm back, but I think I accidentally turned my cat into a newt instead!",3.0
+Support Operator,"Oh no! Don't worry, we'll get that sorted out. Have you attempted to reset your wand by tapping it three times on a dragon scale?",
+Client,"Dragon scale? I live in a suburban neighborhood, where on earth am I going to find a dragon scale?",
+Robot,"Beep boop! Have you considered the ancient technique of blowing into the wand's magic core, much like you would with a video game cartridge?",
+Client,"Blowing into it? Well, it's worth a try, I guess.",
+Client,"Hey, it actually worked! My wand's working again!",2.0
+Support Specialist,"Fantastic news! Just remember, next time you encounter a magical mishap, our support team is always here to help. Have a spellbinding day!",
+Client,"Thank you all so much for your help! I'll definitely keep your number handy for next time. Goodbye!",
+Support Operator,"Goodbye and happy spellcasting!",
+Robot,"Farewell, magical friend! Beep boop!",

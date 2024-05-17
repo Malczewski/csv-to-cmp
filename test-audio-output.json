@@ -1,0 +1,60 @@
+{
+    "responseLevel": "FULL",
+    "save": true,
+    "process": true,
+    "projectName": "<YOUR_PROJECT>",
+    "attributes": [
+        {
+            "name": "verbatim_type_for_agent",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_AGENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_bot",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_UNKNOWN",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_client",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_CLIENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "cool_rich_verbatim",
+            "type": "TEXT",
+            "map": "RICH_VERBATIM",
+            "parameters": {
+                "type": "CALL",
+                "verbatimTypes": [
+                    "verbatim_type_for_agent",
+                    "verbatim_type_for_client",
+                    "verbatim_type_for_bot"
+                ],
+                "language": "en"
+            }
+        },
+        {
+            "name": "NATURAL_ID",
+            "type": "TEXT",
+            "map": "ID1"
+        }
+    ],
+    "records": [
+        {
+            "NATURAL_ID": "Audio;test-audio-output",
+            "cool_rich_verbatim": "{\"ID\": \"test-audio-output\", \"duration\": 5279, \"segment_type\": \"SENTENCE\", \"participants\": [{\"participant_id\": \"0\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": false}, {\"participant_id\": \"1\", \"gender\": \"FEMALE\", \"type\": \"CLIENT\", \"is_bot\": false}, {\"participant_id\": \"2\", \"gender\": \"MALE\", \"type\": \"CLIENT\", \"is_bot\": false}, {\"participant_id\": \"3\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": true}], \"segments\": [{\"participant_id\": \"0\", \"start\": 0, \"end\": 488, \"text\": \"Hi there\"}, {\"participant_id\": \"1\", \"start\": 788, \"end\": 1415, \"text\": \"Hello John\"}, {\"participant_id\": \"0\", \"start\": 1215, \"end\": 1981, \"text\": \"Look who is here\"}, {\"participant_id\": \"1\", \"start\": 1981, \"end\": 2306, \"text\": \"Who?\"}, {\"participant_id\": \"2\", \"start\": 2607, \"end\": 3838, \"text\": \"Hi pals, what's up?\"}, {\"participant_id\": \"3\", \"start\": 3839, \"end\": 5279, \"text\": \"And they all went together\"}]}"
+        }
+    ]
+}

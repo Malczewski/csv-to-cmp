@@ -1,0 +1,5 @@
+name,gender,type
+john,MALE,AGENT
+jane,FEMALE,CLIENT
+michael,MALE,CLIENT
+voice,ROBOT,AGENT

@@ -1,0 +1,60 @@
+{
+    "responseLevel": "FULL",
+    "save": true,
+    "process": true,
+    "projectName": "<YOUR_PROJECT>",
+    "attributes": [
+        {
+            "name": "verbatim_type_for_agent",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_AGENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_bot",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_UNKNOWN",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_client",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_CLIENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "cool_rich_verbatim",
+            "type": "TEXT",
+            "map": "RICH_VERBATIM",
+            "parameters": {
+                "type": "CALL",
+                "verbatimTypes": [
+                    "verbatim_type_for_agent",
+                    "verbatim_type_for_client",
+                    "verbatim_type_for_bot"
+                ],
+                "language": "en"
+            }
+        },
+        {
+            "name": "NATURAL_ID",
+            "type": "TEXT",
+            "map": "ID1"
+        }
+    ],
+    "records": [
+        {
+            "NATURAL_ID": "Audio;jurrasic",
+            "cool_rich_verbatim": "{\"ID\": \"jurrasic\", \"duration\": 228244, \"segment_type\": \"SENTENCE\", \"participants\": [{\"participant_id\": \"0\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": false}, {\"participant_id\": \"1\", \"gender\": \"MALE\", \"type\": \"CLIENT\", \"is_bot\": false}, {\"participant_id\": \"2\", \"gender\": \"FEMALE\", \"type\": \"CLIENT\", \"is_bot\": false}, {\"participant_id\": \"3\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": false}, {\"participant_id\": \"4\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": true}], \"segments\": [{\"participant_id\": \"1\", \"start\": 0, \"end\": 2624, \"text\": \"Hello, I need to report a problem with the T-Rex enclosure.\"}, {\"participant_id\": \"4\", \"start\": 2924, \"end\": 7628, \"text\": \"Welcome to Jurassic Park Customer Support. Can you provide more details about the issue?\"}, {\"participant_id\": \"1\", \"start\": 7928, \"end\": 11388, \"text\": \"The T-Rex seems to have breached the fence. It's a serious safety concern.\"}, {\"participant_id\": \"4\", \"start\": 13988, \"end\": 18020, \"text\": \"I understand the urgency. Let me alert our security team immediately.\"}, {\"participant_id\": \"4\", \"start\": 22320, \"end\": 26608, \"text\": \"Security has been dispatched to contain the situation. Please remain calm.\"}, {\"participant_id\": \"2\", \"start\": 26608, \"end\": 27792, \"text\": \"Alan, what's going on?\"}, {\"participant_id\": \"1\", \"start\": 29392, \"end\": 32921, \"text\": \"Ellie, the T-Rex has escaped. We need to evacuate the park immediately!\"}, {\"participant_id\": \"2\", \"start\": 32921, \"end\": 35034, \"text\": \"Oh no! I'll inform John Hammond right away.\"}, {\"participant_id\": \"0\", \"start\": 35334, \"end\": 37168, \"text\": \"What's this I hear about a T-Rex escape?\"}, {\"participant_id\": \"1\", \"start\": 37268, \"end\": 40821, \"text\": \"Mr. Hammond, we have a serious situation. The T-Rex has broken free.\"}, {\"participant_id\": \"0\", \"start\": 40821, \"end\": 44327, \"text\": \"I'll initiate emergency protocols. Safety is our top priority.\"}, {\"participant_id\": \"3\", \"start\": 44627, \"end\": 46183, \"text\": \"Chaos theory at work, I see.\"}, {\"participant_id\": \"0\", \"start\": 47783, \"end\": 52079, \"text\": \"Dr. Malcolm, this is no time for theories. We need to ensure the safety of our visitors.\"}, {\"participant_id\": \"3\", \"start\": 51379, \"end\": 54839, \"text\": \"Of course, John. Let's focus on containment and minimizing casualties.\"}, {\"participant_id\": \"1\", \"start\": 54839, \"end\": 58763, \"text\": \"The T-Rex is heading towards the visitor center. We need to evacuate everyone immediately!\"}, {\"participant_id\": \"4\", \"start\": 61363, \"end\": 65651, \"text\": \"Evacuation procedures are now in effect. Please proceed to the nearest exit.\"}, {\"participant_id\": \"2\", \"start\": 65651, \"end\": 68670, \"text\": \"I'll help with the evacuation. We need to get everyone to safety.\"}, {\"participant_id\": \"0\", \"start\": 68970, \"end\": 72360, \"text\": \"I deeply regret this incident. Safety measures will be reviewed and enhanced.\"}, {\"participant_id\": \"3\", \"start\": 72660, \"end\": 75586, \"text\": \"Nature always finds a way to remind us of our place in the world.\"}, {\"participant_id\": \"4\", \"start\": 75186, \"end\": 79442, \"text\": \"Emergency teams have successfully contained the T-Rex. The park is secure.\"}, {\"participant_id\": \"1\", \"start\": 79442, \"end\": 81996, \"text\": \"Thank goodness. Let's ensure this never happens again.\"}, {\"participant_id\": \"0\", \"start\": 82296, \"end\": 85431, \"text\": \"Our top priority now is to review and strengthen our security measures.\"}, {\"participant_id\": \"4\", \"start\": 85731, \"end\": 90083, \"text\": \"A comprehensive review of park security protocols will be conducted immediately.\"}, {\"participant_id\": \"1\", \"start\": 90383, \"end\": 93634, \"text\": \"We also need to assess the damage to the enclosure and ensure it's secure.\"}, {\"participant_id\": \"2\", \"start\": 93934, \"end\": 97696, \"text\": \"I'll coordinate with the veterinary team to assess the health and well-being of the dinosaurs.\"}, {\"participant_id\": \"3\", \"start\": 97296, \"end\": 101034, \"text\": \"Perhaps this incident will serve as a lesson in the delicate balance of nature and technology.\"}, {\"participant_id\": \"0\", \"start\": 101034, \"end\": 105074, \"text\": \"Our responsibility extends beyond profit. We must respect the power of these creatures.\"}, {\"participant_id\": \"4\", \"start\": 107674, \"end\": 111866, \"text\": \"Safety enhancements will be implemented to prevent similar incidents in the future.\"}, {\"participant_id\": \"1\", \"start\": 111866, \"end\": 115953, \"text\": \"Let's also address the communication system. It's vital for emergency coordination.\"}, {\"participant_id\": \"2\", \"start\": 116253, \"end\": 120665, \"text\": \"Agreed, Alan. We need reliable communication channels for swift response to any situation.\"}, {\"participant_id\": \"3\", \"start\": 120265, \"end\": 123191, \"text\": \"We must acknowledge the inherent risks of resurrecting ancient species.\"}, {\"participant_id\": \"0\", \"start\": 123191, \"end\": 126163, \"text\": \"But also the potential for scientific advancement and understanding.\"}, {\"participant_id\": \"4\", \"start\": 126463, \"end\": 131071, \"text\": \"Efforts will be made to improve communication systems and emergency response protocols.\"}, {\"participant_id\": \"1\", \"start\": 131371, \"end\": 134924, \"text\": \"We should consider additional training for staff on handling emergency situations.\"}, {\"participant_id\": \"2\", \"start\": 135224, \"end\": 138103, \"text\": \"Training and drills will better prepare us for any future crises.\"}, {\"participant_id\": \"3\", \"start\": 137703, \"end\": 140397, \"text\": \"Life, uh, finds a way to challenge us at every turn.\"}, {\"participant_id\": \"0\", \"start\": 140397, \"end\": 142765, \"text\": \"And it's our responsibility to rise to those challenges.\"}, {\"participant_id\": \"4\", \"start\": 145365, \"end\": 149845, \"text\": \"Training programs will be expanded to ensure all staff are equipped to handle emergencies.\"}, {\"participant_id\": \"1\", \"start\": 149845, \"end\": 153537, \"text\": \"In the meantime, we need to reassure visitors about their safety and the park's future.\"}, {\"participant_id\": \"2\", \"start\": 153837, \"end\": 156832, \"text\": \"Transparency and honesty will be key in rebuilding trust with the public.\"}, {\"participant_id\": \"3\", \"start\": 156432, \"end\": 159544, \"text\": \"We must learn from this incident and adapt. Evolution is inevitable.\"}, {\"participant_id\": \"0\", \"start\": 159544, \"end\": 162586, \"text\": \"Jurassic Park will emerge from this stronger and safer than ever before.\"}, {\"participant_id\": \"4\", \"start\": 165186, \"end\": 169154, \"text\": \"We appreciate your cooperation and understanding during this challenging time.\"}, {\"participant_id\": \"1\", \"start\": 169154, \"end\": 173519, \"text\": \"Let's work together to make Jurassic Park a beacon of scientific progress and responsible stewardship.\"}, {\"participant_id\": \"2\", \"start\": 173819, \"end\": 178393, \"text\": \"With dedication and vigilance, we can ensure the safety and well-being of both dinosaurs and visitors.\"}, {\"participant_id\": \"3\", \"start\": 177993, \"end\": 181244, \"text\": \"Life, as they say, finds a way to test our resilience and resolve.\"}, {\"participant_id\": \"0\", \"start\": 181244, \"end\": 185470, \"text\": \"And we shall rise to meet those tests, ensuring Jurassic Park's legacy for generations to come.\"}, {\"participant_id\": \"4\", \"start\": 188070, \"end\": 192774, \"text\": \"Thank you for your continued support. Together, we will shape the future of Jurassic Park.\"}, {\"participant_id\": \"1\", \"start\": 192774, \"end\": 197255, \"text\": \"Let's not forget the lessons learned from this experience. They will guide us towards a brighter future.\"}, {\"participant_id\": \"2\", \"start\": 197555, \"end\": 202083, \"text\": \"By learning from our mistakes, we can pave the way for a safer and more sustainable Jurassic Park.\"}, {\"participant_id\": \"3\", \"start\": 201683, \"end\": 205839, \"text\": \"Ah, chaos theory in action once again, reminding us of the unpredictability of life.\"}, {\"participant_id\": \"0\", \"start\": 205839, \"end\": 209229, \"text\": \"And yet, within that chaos, lies the potential for greatness and discovery.\"}, {\"participant_id\": \"4\", \"start\": 209529, \"end\": 214297, \"text\": \"Jurassic Park remains committed to innovation, conservation, and the pursuit of knowledge.\"}, {\"participant_id\": \"1\", \"start\": 214597, \"end\": 219961, \"text\": \"With our collective efforts, we will ensure that Jurassic Park continues to inspire and educate future generations.\"}, {\"participant_id\": \"2\", \"start\": 220261, \"end\": 224766, \"text\": \"Let's embrace the challenges ahead and build a legacy of responsible stewardship and scientific advancement.\"}, {\"participant_id\": \"3\", \"start\": 224366, \"end\": 228244, \"text\": \"Life, uh, finds a way to challenge us, but it's how we respond that defines us.\"}]}"
+        }
+    ]
+}

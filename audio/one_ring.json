@@ -1,0 +1,60 @@
+{
+    "responseLevel": "FULL",
+    "save": true,
+    "process": true,
+    "projectName": "<YOUR_PROJECT>",
+    "attributes": [
+        {
+            "name": "verbatim_type_for_agent",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_AGENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_bot",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_UNKNOWN",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_client",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_CLIENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "cool_rich_verbatim",
+            "type": "TEXT",
+            "map": "RICH_VERBATIM",
+            "parameters": {
+                "type": "CALL",
+                "verbatimTypes": [
+                    "verbatim_type_for_agent",
+                    "verbatim_type_for_client",
+                    "verbatim_type_for_bot"
+                ],
+                "language": "en"
+            }
+        },
+        {
+            "name": "NATURAL_ID",
+            "type": "TEXT",
+            "map": "ID1"
+        }
+    ],
+    "records": [
+        {
+            "NATURAL_ID": "Audio;one_ring",
+            "cool_rich_verbatim": "{\"ID\": \"one_ring\", \"duration\": 113627, \"segment_type\": \"SENTENCE\", \"participants\": [{\"participant_id\": \"0\", \"gender\": \"MALE\", \"type\": \"CLIENT\", \"is_bot\": false}, {\"participant_id\": \"1\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": false}, {\"participant_id\": \"2\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": true}, {\"participant_id\": \"3\", \"gender\": \"MALE\", \"type\": \"CLIENT\", \"is_bot\": false}, {\"participant_id\": \"4\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": false}], \"segments\": [{\"participant_id\": \"0\", \"start\": 0, \"end\": 2786, \"text\": \"Hello, I'm inquiring about the status of my ring delivery.\"}, {\"participant_id\": \"2\", \"start\": 3086, \"end\": 10911, \"text\": \"Welcome to Middle-earth Ring Delivery Services. May I have your order ID, please?\"}, {\"participant_id\": \"0\", \"start\": 11211, \"end\": 12953, \"text\": \"My order ID is OneRingToRuleThemAll.\"}, {\"participant_id\": \"2\", \"start\": 13253, \"end\": 19731, \"text\": \"Thank you, Frodo. Let me check the status of your order.\"}, {\"participant_id\": \"2\", \"start\": 20031, \"end\": 27322, \"text\": \"It seems your ring is currently on its way to Mount Doom. ETA is within the next week.\"}, {\"participant_id\": \"1\", \"start\": 27622, \"end\": 29828, \"text\": \"Frodo, my dear boy! How fares the journey?\"}, {\"participant_id\": \"0\", \"start\": 30128, \"end\": 34679, \"text\": \"Gandalf! It's been quite the adventure. We're just waiting for the ring to arrive at Mount Doom.\"}, {\"participant_id\": \"1\", \"start\": 34979, \"end\": 37951, \"text\": \"Excellent! Remember, keep it secret, keep it safe.\"}, {\"participant_id\": \"0\", \"start\": 37551, \"end\": 40059, \"text\": \"Don't worry, Gandalf. The ring is safe with me.\"}, {\"participant_id\": \"3\", \"start\": 40059, \"end\": 42544, \"text\": \"Excuse me, I need to inquire about my sword order.\"}, {\"participant_id\": \"2\", \"start\": 42844, \"end\": 44887, \"text\": \"Of course, may I have your order ID?\"}, {\"participant_id\": \"3\", \"start\": 45187, \"end\": 46650, \"text\": \"My order ID is RangerSword.\"}, {\"participant_id\": \"2\", \"start\": 46950, \"end\": 53173, \"text\": \"Thank you. Let me check the status of your order.\"}, {\"participant_id\": \"2\", \"start\": 53473, \"end\": 56468, \"text\": \"It appears your sword is currently in transit and should arrive shortly.\"}, {\"participant_id\": \"4\", \"start\": 56768, \"end\": 59369, \"text\": \"Aragorn, my friend! Have you lost your sword again?\"}, {\"participant_id\": \"3\", \"start\": 59469, \"end\": 61396, \"text\": \"Legolas! No, it's just delayed.\"}, {\"participant_id\": \"2\", \"start\": 60196, \"end\": 65513, \"text\": \"I've located your order, Aragorn. Your sword should be with you soon.\"}, {\"participant_id\": \"0\", \"start\": 65513, \"end\": 67417, \"text\": \"So, Gandalf, how's your day been?\"}, {\"participant_id\": \"1\", \"start\": 67717, \"end\": 71246, \"text\": \"Oh, you know, just dealing with dragons and dark lords. The usual.\"}, {\"participant_id\": \"0\", \"start\": 70846, \"end\": 72030, \"text\": \"Nothing too exciting then.\"}, {\"participant_id\": \"1\", \"start\": 72030, \"end\": 74004, \"text\": \"Just the fate of Middle-earth hanging in the balance.\"}, {\"participant_id\": \"0\", \"start\": 73104, \"end\": 75380, \"text\": \"Right. Well, I hope you get some rest soon.\"}, {\"participant_id\": \"4\", \"start\": 75380, \"end\": 76982, \"text\": \"Have you seen any orc activity lately?\"}, {\"participant_id\": \"1\", \"start\": 77282, \"end\": 79697, \"text\": \"Indeed, there have been sightings near the borders of Mordor.\"}, {\"participant_id\": \"4\", \"start\": 79297, \"end\": 80365, \"text\": \"We must remain vigilant.\"}, {\"participant_id\": \"3\", \"start\": 80365, \"end\": 83221, \"text\": \"My sword has finally arrived! Thank you for your assistance!\"}, {\"participant_id\": \"2\", \"start\": 83521, \"end\": 94388, \"text\": \"You're welcome, Aragorn. If you need any further assistance, don't hesitate to contact us.\"}, {\"participant_id\": \"0\", \"start\": 94688, \"end\": 97962, \"text\": \"I can't wait for the ring to arrive. The fate of Middle-earth depends on it!\"}, {\"participant_id\": \"1\", \"start\": 98262, \"end\": 100793, \"text\": \"Patience, Frodo. The ring will arrive soon enough.\"}, {\"participant_id\": \"4\", \"start\": 101093, \"end\": 102858, \"text\": \"I'll keep watch for any signs of trouble.\"}, {\"participant_id\": \"0\", \"start\": 103158, \"end\": 105875, \"text\": \"Thank you, Legolas. Your keen eyes are invaluable.\"}, {\"participant_id\": \"1\", \"start\": 106175, \"end\": 110285, \"text\": \"I must depart now. There are matters I must attend to. Farewell, my friends.\"}, {\"participant_id\": \"0\", \"start\": 110585, \"end\": 113627, \"text\": \"Farewell, Gandalf. May the stars shine upon your path.\"}]}"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+name,text,delay
+Luke,"Hello, I need to check the status of my spaceship repair.",
+Droid-1,"Welcome to Galactic Starship Repair Services. May I have your ship's identification number?",
+Luke,"My ship's ID is X-Wing-345.",
+Droid-1,"Thank you, Luke. Let me check the status of your repair.",
+Droid-1,"It appears your spaceship is undergoing repairs in Docking Bay 94. Estimated completion time is within the next day.",5
+Princess Leia,"Luke, how are the repairs going?",1
+Luke,"Leia! The repairs should be completed soon. We'll be back in action in no time.",2
+Princess Leia,"Good to hear. The Rebel Alliance needs every ship ready for the upcoming battle.",
+Han Solo,"Hey, has anyone seen my blaster?",
+Droid-1,"Excuse me, Han. We're currently assisting other customers. Please hold while I check the status of your blaster.",5
+Darth Vader,"I sense a disturbance in the Force.",-0.5
+Princess Leia,"Darth Vader! What are you doing here?",
+Darth Vader,"I'm here to ensure the repairs on my ship are prioritized.",
+Droid-1,"Apologies for the interruption. Han, it seems your blaster is in your quarters.",-1
+Han Solo,"Thanks, Droid-1. I must have misplaced it.",
+Luke,"We need to make sure the repairs are completed quickly. The fate of the Rebellion depends on it.",2
+Princess Leia,"Agreed, Luke. We can't afford any delays.",
+Darth Vader,"These repairs are taking too long. I will not tolerate incompetence.",1
+Han Solo,"Relax, Vader. We'll be ready when the time comes.",
+Droid-1,"Your patience is appreciated, Darth Vader. The repairs will be expedited.",
+Luke,"May the Force be with us all as we prepare for the battle ahead.",

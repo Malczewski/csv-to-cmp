@@ -60,6 +60,8 @@ def read_data(input_file):
 def get_data_type(column_values, header_name):
 	# Helper function to check if all values are numbers
 	def are_all_numbers(values):
+		if average_word_count(values) == 0:
+			return False
 		return all(value.replace('.', '', 1).isdigit() or value.strip() == '' or value == None for value in values)
 
 	# Helper function to check if all values are dates in ISO format or header contains "DATE"
@@ -81,8 +83,20 @@ def get_data_type(column_values, header_name):
 		if not values:
 			return False
 		
-		word_count_set = set(len(value.split()) for value in values)
+		word_count_set = set(word_count(value) for value in values)
 		return len(word_count_set)
+	
+	def distinct_count(values):
+		if not values:
+			return 0
+		
+		word_set = set(values)
+		return len(word_set)
+	
+	def word_count(value):
+		if not value:
+			return 0
+		return len(value.split())
 	
 	def distinct_char_count(values):
 		if not values:
@@ -97,8 +111,10 @@ def get_data_type(column_values, header_name):
 		multi_value_mandatory = re.compile(r'^[^,.!?]+(,[^,.!?]+)+$')
 		return all(multi_value_pattern.match(value) or value == '' for value in values) and any(multi_value_mandatory.match(value) for value in values)
 	
-	distinct_count_threshold = max(len(column_values) / 50, 10) if len(column_values) > 10 else 4
-	if "NATURAL_ID" in header_name.upper() or "ID" == header_name.upper():
+	#distinct_count_threshold = max(len(column_values) / 50, 10) if len(column_values) > 10 else 4
+
+	if "NATURAL_ID" in header_name.upper() or "ID" == header_name.upper() \
+		or distinct_count(column_values) == len(column_values) and average_word_count(column_values) < 2:
 		return "ID"
 	if are_all_numbers(column_values):
 		return "NUMBER"
@@ -106,9 +122,11 @@ def get_data_type(column_values, header_name):
 		return "DATE"
 	elif are_multi_value(column_values):
 		return "MULTIVALUE"
-	elif average_word_count(column_values) > 2 \
-		and (distinct_word_count(column_values) > distinct_count_threshold \
-			or distinct_char_count(column_values) > distinct_count_threshold):
+	elif average_word_count(column_values) > 3 \
+		and distinct_count(column_values) > len(column_values) * 0.5:
+		#and (distinct_word_count(column_values) > distinct_count_threshold \
+		#	or distinct_char_count(column_values) > distinct_count_threshold):
+
 		return "VERBATIM"
 	elif "SOURCE" in header_name.upper():
 		return "SOURCE"

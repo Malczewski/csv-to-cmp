@@ -1,0 +1,60 @@
+{
+    "responseLevel": "FULL",
+    "save": true,
+    "process": true,
+    "projectName": "<YOUR_PROJECT>",
+    "attributes": [
+        {
+            "name": "verbatim_type_for_agent",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_AGENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_bot",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_UNKNOWN",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "verbatim_type_for_client",
+            "type": "TEXT",
+            "map": "VERBATIM",
+            "verbatimMetadataTags": [
+                "CHANNEL_CLIENT",
+                "TYPE_AUDIO"
+            ]
+        },
+        {
+            "name": "cool_rich_verbatim",
+            "type": "TEXT",
+            "map": "RICH_VERBATIM",
+            "parameters": {
+                "type": "CALL",
+                "verbatimTypes": [
+                    "verbatim_type_for_agent",
+                    "verbatim_type_for_client",
+                    "verbatim_type_for_bot"
+                ],
+                "language": "en"
+            }
+        },
+        {
+            "name": "NATURAL_ID",
+            "type": "TEXT",
+            "map": "ID1"
+        }
+    ],
+    "records": [
+        {
+            "NATURAL_ID": "Audio;magic_wand",
+            "cool_rich_verbatim": "{\"ID\": \"magic_wand\", \"duration\": 80527, \"segment_type\": \"SENTENCE\", \"participants\": [{\"participant_id\": \"0\", \"gender\": \"FEMALE\", \"type\": \"CLIENT\", \"is_bot\": false}, {\"participant_id\": \"1\", \"gender\": \"FEMALE\", \"type\": \"AGENT\", \"is_bot\": false}, {\"participant_id\": \"2\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": false}, {\"participant_id\": \"3\", \"gender\": \"MALE\", \"type\": \"AGENT\", \"is_bot\": true}], \"segments\": [{\"participant_id\": \"0\", \"start\": 0, \"end\": 2183, \"text\": \"Hello? Is this the Magical Support Hotline?\"}, {\"participant_id\": \"1\", \"start\": 2483, \"end\": 5664, \"text\": \"Yes, you've reached the right place! How can I assist you today?\"}, {\"participant_id\": \"0\", \"start\": 5964, \"end\": 11653, \"text\": \"Well, my magic wand isn't working properly. I tried casting a spell to turn my annoying neighbor into a frog, but nothing happened!\"}, {\"participant_id\": \"1\", \"start\": 11953, \"end\": 17595, \"text\": \"Oh dear, let's see what we can do to fix that. Have you tried waving your wand in a figure-eight pattern while chanting 'Abracadabra'?\"}, {\"participant_id\": \"0\", \"start\": 17895, \"end\": 19915, \"text\": \"Yes, I've tried that, but still no luck!\"}, {\"participant_id\": \"2\", \"start\": 20215, \"end\": 27436, \"text\": \"Greetings! This is the Magical Support Specialist. Have you attempted to charge your wand under a full moon? Sometimes they just need a little celestial boost.\"}, {\"participant_id\": \"0\", \"start\": 27736, \"end\": 31149, \"text\": \"Hmm, no, I haven't tried that. Let me go outside and give it a shot.\"}, {\"participant_id\": \"0\", \"start\": 34749, \"end\": 38487, \"text\": \"Okay, I'm back, but I think I accidentally turned my cat into a newt instead!\"}, {\"participant_id\": \"1\", \"start\": 38487, \"end\": 44455, \"text\": \"Oh no! Don't worry, we'll get that sorted out. Have you attempted to reset your wand by tapping it three times on a dragon scale?\"}, {\"participant_id\": \"0\", \"start\": 44755, \"end\": 49051, \"text\": \"Dragon scale? I live in a suburban neighborhood, where on earth am I going to find a dragon scale?\"}, {\"participant_id\": \"3\", \"start\": 49351, \"end\": 56039, \"text\": \"Beep boop! Have you considered the ancient technique of blowing into the wand's magic core, much like you would with a video game cartridge?\"}, {\"participant_id\": \"0\", \"start\": 56339, \"end\": 59102, \"text\": \"Blowing into it? Well, it's worth a try, I guess.\"}, {\"participant_id\": \"0\", \"start\": 61702, \"end\": 64163, \"text\": \"Hey, it actually worked! My wand's working again!\"}, {\"participant_id\": \"2\", \"start\": 64163, \"end\": 71152, \"text\": \"Fantastic news! Just remember, next time you encounter a magical mishap, our support team is always here to help. Have a spellbinding day!\"}, {\"participant_id\": \"0\", \"start\": 71452, \"end\": 75887, \"text\": \"Thank you all so much for your help! I'll definitely keep your number handy for next time. Goodbye!\"}, {\"participant_id\": \"1\", \"start\": 76187, \"end\": 77603, \"text\": \"Goodbye and happy spellcasting!\"}, {\"participant_id\": \"3\", \"start\": 77903, \"end\": 80527, \"text\": \"Farewell, magical friend! Beep boop!\"}]}"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+name,gender,type
+Luke,MALE,CLIENT
+Princess Leia,FEMALE,CLIENT
+Han Solo,MALE,CLIENT
+Darth Vader,MALE,AGENT
+Droid-1,ROBOT,AGENT

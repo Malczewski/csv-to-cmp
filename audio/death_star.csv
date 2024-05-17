@@ -1,0 +1,25 @@
+name,text,delay
+Darth Vader,"This is Darth Vader. I require immediate assistance with the Death Star.",
+Zara,"This is Zara from Galactic ow may I assist you, Lord Vader?",2
+Darth Vader,"The Death Star's primary weapon malfunctioned during a crucial operation. I suspect it's due to a design flaw in the exhaust vent system.",
+Zara,"I see, that sounds like a serious issue. Let's try to troubleshoot it. Have you attempted to recalibrate the targeting system?",
+Darth Vader,"Yes, I've recalibrated it multiple times, but the problem persists. We need a more permanent solution.",
+K-3PO,"Greetings, Lord Vader. This is K-3PO, your loyal droid Perhaps the vent shaft needs to be cleared of any debris or obstructions?",
+Darth Vader,"That's a possibility. How do we proceed with that?",
+Zara,"Understood, Lord Vader. I'll relay the order to the maintenance crew right away.",1
+Darth Vader,"Excellent. We cannot afford any further delays.",
+K-3PO,"While we wait for the maintenance droids to arrive, have you considered reinforcing the vent shaft with additional durasteel plating?", 2
+Darth Vader,"A temporary solution, but it might buy us some time. Proceed with the reinforcement.",
+Zara,"I'm coordinating with the engineering team to implement the durasteel plating as we speak.",
+Darth Vader,"Good. Let's hope this prevents any future mishaps.",
+K-3PO,"The reinforcement process is underway, Lord Vader. We should see improvements in the system's stability soon.",-1
+K-3PO,"Understood, my lord. I shall oversee the installation process personally.",1
+Darth Vader,"See to it that everything is executed flawlessly. I will not tolerate any more failures.",
+Zara,"The maintenance droids have cleared the vent shaft, and the durasteel plating has been successfully installed, Lord Vader.",
+Darth Vader,"Excellent. Let us hope these measures prove sufficient to prevent any future incidents.",
+K-3PO,"The additional thermal exhaust ports have also been installed, Lord Vader. The Death Star's defenses are now significantly strengthened.",
+Darth Vader,"Very good. Your efficiency is commendable, K-3PO. That will be all for now.",2
+Zara,"Is there anything else you require, Lord Vader?",
+Darth Vader,"No, you may return to your duties. May the Force be with you.",
+K-3PO,"Farewell, Lord Vader. Should you require further assistance, you know where to find us.",-1
+Darth Vader,"Indeed. End transmission.",

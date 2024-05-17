@@ -1,0 +1,6 @@
+name,gender,type
+Frodo,MALE,CLIENT
+Gandalf,MALE,AGENT
+AI-9000,ROBOT,AGENT
+Aragorn,MALE,CLIENT
+Legolas,MALE,AGENT

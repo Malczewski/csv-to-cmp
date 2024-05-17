@@ -1,0 +1,57 @@
+name,text,delay
+Dr. Alan Grant,"Hello, I need to report a problem with the T-Rex enclosure.",
+Dino-9000,"Welcome to Jurassic Park Customer Support. Can you provide more details about the issue?",
+Dr. Alan Grant,"The T-Rex seems to have breached the fence. It's a serious safety concern.",
+Dino-9000,"I understand the urgency. Let me alert our security team immediately.",2
+Dino-9000,"Security has been dispatched to contain the situation. Please remain calm.",4
+Dr. Ellie Sattler,"Alan, what's going on?",
+Dr. Alan Grant,"Ellie, the T-Rex has escaped. We need to evacuate the park immediately!",1
+Dr. Ellie Sattler,"Oh no! I'll inform John Hammond right away.",
+John Hammond,"What's this I hear about a T-Rex escape?",
+Dr. Alan Grant,"Mr. Hammond, we have a serious situation. The T-Rex has broken free.",-0.5
+John Hammond,"I'll initiate emergency protocols. Safety is our top priority.",
+Ian Malcolm,"Chaos theory at work, I see.",
+John Hammond,"Dr. Malcolm, this is no time for theories. We need to ensure the safety of our visitors.",1
+Ian Malcolm,"Of course, John. Let's focus on containment and minimizing casualties.",-1
+Dr. Alan Grant,"The T-Rex is heading towards the visitor center. We need to evacuate everyone immediately!",
+Dino-9000,"Evacuation procedures are now in effect. Please proceed to the nearest exit.",2
+Dr. Ellie Sattler,"I'll help with the evacuation. We need to get everyone to safety.",
+John Hammond,"I deeply regret this incident. Safety measures will be reviewed and enhanced.",
+Ian Malcolm,"Nature always finds a way to remind us of our place in the world.",
+Dino-9000,"Emergency teams have successfully contained the T-Rex. The park is secure.",-1
+Dr. Alan Grant,"Thank goodness. Let's ensure this never happens again.",
+John Hammond,"Our top priority now is to review and strengthen our security measures.",
+Dino-9000,"A comprehensive review of park security protocols will be conducted immediately.",
+Dr. Alan Grant,"We also need to assess the damage to the enclosure and ensure it's secure.",
+Dr. Ellie Sattler,"I'll coordinate with the veterinary team to assess the health and well-being of the dinosaurs.",
+Ian Malcolm,"Perhaps this incident will serve as a lesson in the delicate balance of nature and technology.",-1
+John Hammond,"Our responsibility extends beyond profit. We must respect the power of these creatures.",
+Dino-9000,"Safety enhancements will be implemented to prevent similar incidents in the future.",2
+Dr. Alan Grant,"Let's also address the communication system. It's vital for emergency coordination.",
+Dr. Ellie Sattler,"Agreed, Alan. We need reliable communication channels for swift response to any situation.",
+Ian Malcolm,"We must acknowledge the inherent risks of resurrecting ancient species.",-1
+John Hammond,"But also the potential for scientific advancement and understanding.",
+Dino-9000,"Efforts will be made to improve communication systems and emergency response protocols.",
+Dr. Alan Grant,"We should consider additional training for staff on handling emergency situations.",
+Dr. Ellie Sattler,"Training and drills will better prepare us for any future crises.",
+Ian Malcolm,"Life, uh, finds a way to challenge us at every turn.",-1
+John Hammond,"And it's our responsibility to rise to those challenges.",
+Dino-9000,"Training programs will be expanded to ensure all staff are equipped to handle emergencies.",2
+Dr. Alan Grant,"In the meantime, we need to reassure visitors about their safety and the park's future.",
+Dr. Ellie Sattler,"Transparency and honesty will be key in rebuilding trust with the public.",
+Ian Malcolm,"We must learn from this incident and adapt. Evolution is inevitable.",-1
+John Hammond,"Jurassic Park will emerge from this stronger and safer than ever before.",
+Dino-9000,"We appreciate your cooperation and understanding during this challenging time.",2
+Dr. Alan Grant,"Let's work together to make Jurassic Park a beacon of scientific progress and responsible stewardship.",
+Dr. Ellie Sattler,"With dedication and vigilance, we can ensure the safety and well-being of both dinosaurs and visitors.",
+Ian Malcolm,"Life, as they say, finds a way to test our resilience and resolve.",-1
+John Hammond,"And we shall rise to meet those tests, ensuring Jurassic Park's legacy for generations to come.",
+Dino-9000,"Thank you for your continued support. Together, we will shape the future of Jurassic Park.",2
+Dr. Alan Grant,"Let's not forget the lessons learned from this experience. They will guide us towards a brighter future.",
+Dr. Ellie Sattler,"By learning from our mistakes, we can pave the way for a safer and more sustainable Jurassic Park.",
+Ian Malcolm,"Ah, chaos theory in action once again, reminding us of the unpredictability of life.",-1
+John Hammond,"And yet, within that chaos, lies the potential for greatness and discovery.",
+Dino-9000,"Jurassic Park remains committed to innovation, conservation, and the pursuit of knowledge.",
+Dr. Alan Grant,"With our collective efforts, we will ensure that Jurassic Park continues to inspire and educate future generations.",
+Dr. Ellie Sattler,"Let's embrace the challenges ahead and build a legacy of responsible stewardship and scientific advancement.",
+Ian Malcolm,"Life, uh, finds a way to challenge us, but it's how we respond that defines us.",-1

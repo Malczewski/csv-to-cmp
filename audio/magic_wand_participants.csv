@@ -1,0 +1,5 @@
+name,gender,type
+Client,FEMALE,CLIENT
+Support Operator,FEMALE,AGENT
+Support Specialist,MALE,AGENT
+Robot,ROBOT,AGENT
