@@ -234,8 +234,11 @@ def main(text_csv, type_csv, output_file, seed = 42):
 	merged_data = merge_data(conversation_data, participants_data)
 		
 	audio_pieces = generate_audio_pieces(merged_data, randomOffset)
-	delays = [float(row['delay']) if row.get('delay') is not None and row['delay'].strip() != '' else None for row in merged_data]
-		
+	delays = [
+		float(row['delay']) if row.get('delay') is not None and row['delay'].strip() != '' 
+		else None 
+		for row in merged_data
+	]
 	result_audio, start_end_times = merge_audio_with_delays(audio_pieces, delays)
 		
 	result_audio.export(f"{output_file}.mp3", format="mp3")
