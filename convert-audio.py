@@ -22,6 +22,12 @@ def categorize_voices(voices):
 				else:
 					other_voices.append(voice)
 
+	if (len(male_voices) == 0):
+		male_voices = voices
+	if (len(female_voices) == 0):
+		female_voices = voices
+	if (len(other_voices) == 0):
+		other_voices = voices
 	return male_voices, female_voices, other_voices
 
 def select_voice(voices, variant, randomOffset):
@@ -228,8 +234,7 @@ def main(text_csv, type_csv, output_file, seed = 42):
 	merged_data = merge_data(conversation_data, participants_data)
 		
 	audio_pieces = generate_audio_pieces(merged_data, randomOffset)
-		
-	delays = [float(row['delay']) if row['delay'].strip() != '' else None for row in merged_data]
+	delays = [float(row['delay']) if row.get('delay') is not None and row['delay'].strip() != '' else None for row in merged_data]
 		
 	result_audio, start_end_times = merge_audio_with_delays(audio_pieces, delays)
 		
